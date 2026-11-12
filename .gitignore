@@ -1,0 +1,3 @@
+# Keep local JSONPowerDB credentials out of GitHub
+/config.js
+

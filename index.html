@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f7fb">
+  <title>Project Management Form</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+  <main class="container py-5">
+    <section class="form-shell mx-auto">
+      <header class="mb-4">
+        <div class="eyebrow">COLLEGE • PROJECTS</div>
+        <h1 class="h2 mb-2">Project Management</h1>
+        <p class="text-secondary mb-0">Enter a Project ID to create a project or load an existing record.</p>
+      </header>
+
+      <div id="connectionNotice" class="alert alert-warning" role="alert" hidden>
+        Add your JSONPowerDB connection token in <code>config.js</code> to connect this form.
+      </div>
+      <div id="message" class="alert" role="status" aria-live="polite" hidden></div>
+
+      <form id="projectForm" novalidate>
+        <div class="row g-3">
+          <div class="col-12">
+            <label for="projectId" class="form-label">Project ID <span class="required">*</span></label>
+            <input id="projectId" name="Project-ID" class="form-control" type="text" maxlength="64" autocomplete="off" required>
+            <div class="form-text">Press Enter or move to the next field to check this ID.</div>
+            <div class="invalid-feedback">Project ID is required.</div>
+          </div>
+          <div class="col-12">
+            <label for="projectName" class="form-label">Project Name <span class="required">*</span></label>
+            <input id="projectName" name="Project-Name" class="form-control" type="text" maxlength="150" disabled required>
+            <div class="invalid-feedback">Project Name is required.</div>
+          </div>
+          <div class="col-12">
+            <label for="assignedTo" class="form-label">Assigned To <span class="required">*</span></label>
+            <input id="assignedTo" name="Assigned-To" class="form-control" type="text" maxlength="120" disabled required>
+            <div class="invalid-feedback">Assigned To is required.</div>
+          </div>
+          <div class="col-md-6">
+            <label for="assignmentDate" class="form-label">Assignment Date <span class="required">*</span></label>
+            <input id="assignmentDate" name="Assignment-Date" class="form-control" type="date" disabled required>
+            <div class="invalid-feedback">Assignment Date is required.</div>
+          </div>
+          <div class="col-md-6">
+            <label for="deadline" class="form-label">Deadline <span class="required">*</span></label>
+            <input id="deadline" name="Deadline" class="form-control" type="date" disabled required>
+            <div class="invalid-feedback">Deadline is required.</div>
+          </div>
+        </div>
+
+        <div class="d-flex flex-wrap gap-2 mt-4">
+          <button id="saveButton" class="btn btn-primary px-4" type="button" disabled>Save</button>
+          <button id="updateButton" class="btn btn-dark px-4" type="button" disabled>Update</button>
+          <button id="resetButton" class="btn btn-outline-secondary px-4" type="button">Reset</button>
+        </div>
+      </form>
+      <footer class="mt-4 small text-secondary">Connected to JSONPowerDB · COLLEGE-DB / PROJECT-TABLE</footer>
+    </section>
+  </main>
+
+  <script src="config.js?v=7"></script>
+  <script src="app.js?v=7"></script>
+</body>
+</html>
