@@ -2,7 +2,7 @@
 
 A Bootstrap form for the **Project Management Form** micro project. It stores records in the `PROJECT-TABLE` relation of the `COLLEGE-DB` database using JSONPowerDB.
 
-## Setup
+## Setup guide
 
 1. Copy `config.example.js` to `config.js`.
 2. Open the local `config.js` and paste your JSONPowerDB connection token into `token`. This file is ignored by Git.
